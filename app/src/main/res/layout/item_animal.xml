@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/animal_img"
         android:layout_width="@dimen/height_img"
         android:layout_height="@dimen/width_img"
@@ -17,11 +17,10 @@
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    </ImageView>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/animal_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,11 +30,10 @@
         android:textColor="@color/colorBlack"
         android:textSize="22sp"
         app:layout_constraintStart_toEndOf="@+id/animal_img"
-        app:layout_constraintTop_toTopOf="@+id/animal_img">
+        app:layout_constraintTop_toTopOf="@+id/animal_img"/>
 
-    </TextView>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/animal_info"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -49,11 +47,10 @@
         app:layout_constraintBottom_toTopOf="@+id/animal_memo"
         app:layout_constraintEnd_toStartOf="@+id/img_btn_arrow"
         app:layout_constraintStart_toStartOf="@+id/animal_title"
-        app:layout_constraintTop_toBottomOf="@+id/animal_title">
+        app:layout_constraintTop_toBottomOf="@+id/animal_title"/>
 
-    </TextView>
 
-    <ImageButton
+    <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/img_btn_arrow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,11 +61,9 @@
         android:src="@mipmap/ic_arrow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    </ImageButton>
-
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/animal_memo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -76,8 +71,7 @@
         android:text="@string/animal_memo"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/animal_img"
-        app:layout_constraintStart_toStartOf="@+id/animal_info">
+        app:layout_constraintStart_toStartOf="@+id/animal_info"/>
 
-    </TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

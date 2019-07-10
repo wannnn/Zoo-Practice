@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/img_animal_detail"
         android:layout_width="match_parent"
         android:layout_height="280dp"
@@ -14,11 +14,10 @@
         app:layout_constraintDimensionRatio="w,4:3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    </ImageView>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/animal_detail_info"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -29,11 +28,10 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_animal_detail">
+        app:layout_constraintTop_toBottomOf="@+id/img_animal_detail"/>
 
-    </TextView>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/animal_detail_memo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,22 +39,20 @@
         android:text="@string/animal_memo"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/animal_detail_info"
-        app:layout_constraintTop_toBottomOf="@+id/animal_detail_info">
+        app:layout_constraintTop_toBottomOf="@+id/animal_detail_info"/>
 
-    </TextView>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/animal_detail_category"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/animal_category"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/animal_detail_memo"
-        app:layout_constraintTop_toBottomOf="@+id/animal_detail_memo">
+        app:layout_constraintTop_toBottomOf="@+id/animal_detail_memo"/>
 
-    </TextView>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/open_website"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -66,8 +62,7 @@
         android:linksClickable="true"
         app:layout_constraintBottom_toBottomOf="@+id/animal_detail_category"
         app:layout_constraintEnd_toEndOf="@+id/animal_detail_info"
-        app:layout_constraintTop_toTopOf="@+id/animal_detail_category">
+        app:layout_constraintTop_toTopOf="@+id/animal_detail_category"/>
 
-    </TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
