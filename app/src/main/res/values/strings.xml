@@ -6,4 +6,6 @@
     <string name="animal_title">貓館</string>
     <string name="animal_info">沙漠動物區以隨風搖曳的棕櫚樹模擬中東地區的沙漠環境，展示具代表性的單峰駱駝、雙峰駱駝、非洲野驢和弓角羚羊等。來到這裡，你就能知道動物用什麼方式適應乾旱、高溫及晝夜溫差大的氣候呢？</string>
     <string name="animal_memo">無休館資訊</string>
+    <string name="animal_category">室內區</string>
+    <string name="open_website">在網頁開啟</string>
 </resources>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/img_animal_detail"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:src="@drawable/cat"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="w,4:3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/animal_detail_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/animal_info"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_animal_detail">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/animal_detail_memo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/animal_memo"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/animal_detail_info"
+        app:layout_constraintTop_toBottomOf="@+id/animal_detail_info">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/animal_detail_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/animal_category"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/animal_detail_memo"
+        app:layout_constraintTop_toBottomOf="@+id/animal_detail_memo">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/open_website"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/open_website"
+        android:textSize="16sp"
+        android:autoLink="web"
+        android:linksClickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/animal_detail_category"
+        app:layout_constraintEnd_toEndOf="@+id/animal_detail_info"
+        app:layout_constraintTop_toTopOf="@+id/animal_detail_category">
+
+    </TextView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
