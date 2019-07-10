@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Toolbar -->
+    <dimen name="height_toolbar">55dp</dimen>
+
+    <!-- ImageView -->
+    <dimen name="height_img">150dp</dimen>
+    <dimen name="width_img">150dp</dimen>
+</resources>
