@@ -1,5 +1,5 @@
 package com.example.zoopractice.model
 
-data class Animal(
+data class ServerResponse(
     val result: Result? = Result()
 )

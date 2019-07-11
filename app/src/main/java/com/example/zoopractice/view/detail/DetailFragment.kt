@@ -1,4 +1,4 @@
-package com.example.zoopractice.ui.detail
+package com.example.zoopractice.view.detail
 
 import androidx.fragment.app.Fragment
 

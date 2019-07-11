@@ -5,7 +5,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
-    private const val BASEURL = "https://data.taipei/opendata/datalist/apiAccess?scope=resourceAquire&"
+    private const val BASEURL = "https://data.taipei/opendata/datalist/"
 
     private var retrofit : Retrofit?=null
 

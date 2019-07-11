@@ -1,12 +1,12 @@
 package com.example.zoopractice.api
 
-import com.example.zoopractice.model.Animal
+import com.example.zoopractice.model.ServerResponse
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface ApiInterface {
 
-    @GET("rid={id}")
-    fun getAnimal(@Path("id") id: String): Observable<Animal>
+    @GET("apiAccess?scope=resourceAquire&rid={id}")
+    fun getAnimal(@Path("id") id: String): Observable<ServerResponse>
 }
