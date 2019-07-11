@@ -39,13 +39,7 @@ class MainAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
-        private val binding: FragMainBinding? = null
-
-        fun bind(data: AnimalResults) {
-
-
-
-        }
+//        val binding: FragMainBinding = FragMainBinding.bind(itemView)
 
     }
 

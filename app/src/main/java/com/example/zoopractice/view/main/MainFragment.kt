@@ -58,11 +58,11 @@ class MainFragment : Fragment() {
 
     private fun observeViewModel(viewModel: MainViewModel) {
         // Update the list when the data changes
-        viewModel.getAnimalData().observe(this,
+        viewModel.getZooData().observe(this,
             Observer<List<AnimalResults>> { animalResults ->
                 if (animalResults != null) {
 //                    mAdapter.updateData(animalResults)
-                    Log.d("TAG","Results" + animalResults)
+                    Log.d("TAG", "Results$animalResults")
                 }
             })
     }
