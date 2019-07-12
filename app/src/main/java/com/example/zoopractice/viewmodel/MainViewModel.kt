@@ -2,22 +2,18 @@ package com.example.zoopractice.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.zoopractice.model.AnimalResults
-import com.example.zoopractice.repository.AnimalRepository
+import com.example.zoopractice.model.Results
+import com.example.zoopractice.repository.ZooRepository
 
 class MainViewModel : ViewModel() {
 
-    private val repository: AnimalRepository = AnimalRepository()
+    private val repository: ZooRepository = ZooRepository()
 
-    val test = "123"
 
-    fun getZooData() : MutableLiveData<List<AnimalResults>> {
+    fun getZooData() : MutableLiveData<List<Results>> {
         return repository.getZooData()
     }
 
-//    val items: MutableLiveData<List<AnimalResults>> =
-//        MutableLiveData<List<AnimalResults>>().apply {
-//            value = AnimalRepository().getAnimalData()
-//        }
+    val items: MutableLiveData<List<Results>> = repository.getZooData()
 
 }

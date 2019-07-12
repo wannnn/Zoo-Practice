@@ -1,46 +1,56 @@
 package com.example.zoopractice.view.main
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.zoopractice.BR
 import com.example.zoopractice.R
-import com.example.zoopractice.databinding.FragMainBinding
-import com.example.zoopractice.model.AnimalResults
+import com.example.zoopractice.databinding.ItemAnimalBinding
+import com.example.zoopractice.model.Results
 
 
+class MainAdapter : RecyclerView.Adapter<MainAdapter.ItemHolder>() {
 
-class MainAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    private var resultsList: List<Results> = ArrayList()
 
-    private var animalResults: List<AnimalResults> = ArrayList()
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
+        val binding = DataBindingUtil.inflate<ItemAnimalBinding>(LayoutInflater.from(parent.context), R.layout.item_animal, parent, false)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_animal, parent, false)
 
-        return ViewHolder(view)
+        return ItemHolder(binding)
     }
 
-//    override fun getItemCount(): Int = animalResults.size
-    override fun getItemCount(): Int {
-        return 5
+    override fun getItemCount(): Int = resultsList.size
+
+
+    override fun onBindViewHolder(holder: ItemHolder, position: Int) {
+
+        holder.bind(resultsList[position])
     }
 
-
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-
-//        val data = animalResults?.get(position)
-//        holder.binding.setData(data)
-    }
-
-    fun updateData(list: List<AnimalResults>) {
-        animalResults = list
+    fun setData(list: List<Results>) {
+        resultsList = list
         notifyDataSetChanged()
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
-//        val binding: FragMainBinding = FragMainBinding.bind(itemView)
+    class ItemHolder (private val binding: ItemAnimalBinding) : RecyclerView.ViewHolder(binding.root){
+
+        fun bind(data: Results) {
+            binding.apply {
+                setVariable(BR.results, data)
+                executePendingBindings()
+            }
+        }
 
     }
+
+//    @BindingAdapter({"imgUrl"})
+//    fun loadImage(imageView: ImageView, url: String) {
+//        Glide.with(this)
+//            .load(url)
+//            .into(imageView)
+//    }
 
 }

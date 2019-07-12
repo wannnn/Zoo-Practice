@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable name="viewModel"
-            type="com.example.zoopractice.viewmodel.MainViewModel"/>
+        <variable name="results"
+            type="com.example.zoopractice.model.Results"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,11 +20,12 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
-            android:src="@drawable/cat"
+            android:src="@{results.e_Pic_URL}"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/cat"/>
 
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -33,11 +34,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="@string/animal_title"
+            android:text="@{results.e_Name}"
             android:textColor="@color/colorBlack"
             android:textSize="22sp"
             app:layout_constraintStart_toEndOf="@+id/animal_img"
-            app:layout_constraintTop_toTopOf="@+id/animal_img"/>
+            app:layout_constraintTop_toTopOf="@+id/animal_img"
+            tools:text="@string/animal_title"/>
 
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -49,12 +51,13 @@
             android:layout_marginBottom="8dp"
             android:ellipsize="end"
             android:maxLines="2"
-            android:text="@string/animal_info"
+            android:text="@{results.e_Info}"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/animal_memo"
             app:layout_constraintEnd_toStartOf="@+id/img_btn_arrow"
             app:layout_constraintStart_toStartOf="@+id/animal_title"
-            app:layout_constraintTop_toBottomOf="@+id/animal_title"/>
+            app:layout_constraintTop_toBottomOf="@+id/animal_title"
+            tools:text="@string/animal_info"/>
 
 
         <androidx.appcompat.widget.AppCompatImageButton
@@ -75,10 +78,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="@string/animal_memo"
+            android:text="@{results.e_Memo}"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/animal_img"
-            app:layout_constraintStart_toStartOf="@+id/animal_info"/>
+            app:layout_constraintStart_toStartOf="@+id/animal_info"
+            tools:text="@string/animal_memo"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

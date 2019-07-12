@@ -1,6 +1,7 @@
 package com.example.zoopractice.model
 
-data class AnimalResults(
+
+data class Results(
     val E_Category: String? = "",
     val E_Geo: String? = "",
     val E_Info: String? = "",
