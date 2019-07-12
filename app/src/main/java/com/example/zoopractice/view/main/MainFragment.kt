@@ -27,14 +27,13 @@ class MainFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-            binding = FragMainBinding.bind(inflater.inflate(R.layout.frag_main, container, false)).apply {
-                this.viewModel = viewModel
-                this.lifecycleOwner = this@MainFragment
-                this.recyclerAnimal.apply {
-                    layoutManager = LinearLayoutManager(context)
-                    hasFixedSize()
-                }
+        binding = FragMainBinding.bind(inflater.inflate(R.layout.frag_main, container, false)).apply {
+            this.lifecycleOwner = this@MainFragment
+            this.recyclerAnimal.apply {
+                layoutManager = LinearLayoutManager(context)
+                hasFixedSize()
             }
+        }
 
         return binding.root
     }
