@@ -10,7 +10,7 @@ import com.example.zoopractice.model.Results
 import com.example.zoopractice.viewmodel.MainViewModel
 
 
-class MainAdapter(val mainViewModel: MainViewModel) : RecyclerView.Adapter<MainAdapter.ItemHolder>() {
+class MainAdapter(private val mainViewModel: MainViewModel) : RecyclerView.Adapter<MainAdapter.ItemHolder>() {
 
     private var resultsList: List<Results> = ArrayList()
 
@@ -35,7 +35,7 @@ class MainAdapter(val mainViewModel: MainViewModel) : RecyclerView.Adapter<MainA
 
     class ItemHolder (private val binding: ItemAnimalBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(data: Results, viewModel: MainViewModel) {
-            viewModel?.let {
+            viewModel.let {
                 binding.results = data
                 binding.viewModel = it
                 binding.executePendingBindings()

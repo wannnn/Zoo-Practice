@@ -13,9 +13,7 @@
         tools:layout="@layout/frag_main">
         <action
             android:id="@+id/action_mainFragment_to_detailFragment"
-            app:destination="@id/detailFragment"
-            app:popUpTo="@+id/mainFragment"
-            app:popUpToInclusive="true"/>
+            app:destination="@id/detailFragment"/>
     </fragment>
 
     <fragment
@@ -24,4 +22,5 @@
         android:label="DetailFragment"
         tools:layout="@layout/frag_detail"/>
     <action android:id="@+id/action_global_detailFragment" app:destination="@id/detailFragment" />
+
 </navigation>

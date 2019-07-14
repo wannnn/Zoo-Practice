@@ -3,10 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data
-        android:layout_width="12dp"
-        android:layout_height="6dp">
-
+    <data>
         <variable
             name="results"
             type="com.example.zoopractice.model.Results" />
@@ -78,7 +75,7 @@
             android:layout_marginBottom="16dp"
             android:background="@null"
             android:src="@mipmap/ic_arrow"
-            android:onClick="@{viewModel::click}"
+            android:onClick="@{(v) -> viewModel.click(v, results)}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
