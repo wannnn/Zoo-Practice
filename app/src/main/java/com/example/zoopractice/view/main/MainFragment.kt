@@ -21,18 +21,21 @@ class MainFragment : Fragment() {
         fun newInstance() = MainFragment()
     }
 
-    private lateinit var mRecyclerView: RecyclerView
-    private lateinit var viewModel: MainViewModel
-    private var mAdapter: MainAdapter = MainAdapter()
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: MainAdapter
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    private val viewModel: MainViewModel by lazy {
+        ViewModelProviders.of(this).get(MainViewModel::class.java)
+    }
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.frag_main, container, false)
 
-        mRecyclerView = view.findViewById(R.id.recycler_animal)
-                mRecyclerView.apply {
+        recyclerView = view.findViewById(R.id.recycler_animal)
+                recyclerView.apply {
                     layoutManager = LinearLayoutManager(context)
-                    adapter = mAdapter
+                    this@MainFragment.adapter = MainAdapter(viewModel)
+                    adapter = this@MainFragment.adapter
                     hasFixedSize()
                 }
 
@@ -42,8 +45,6 @@ class MainFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        // ViewModel
-        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
 
         observeViewModel(viewModel)
     }
@@ -54,7 +55,7 @@ class MainFragment : Fragment() {
         viewModel.items.observe(this,
             Observer<List<Results>> { results ->
                 if (results != null) {
-                    mAdapter.setData(results)
+                    adapter.setData(results)
                     Log.d("TAG", "Results$results")
                     Log.d("TAG", "Results" + results.size)
                 }

@@ -12,7 +12,7 @@
             type="com.example.zoopractice.model.Results" />
 
         <variable
-            name="viewmodel"
+            name="viewModel"
             type="com.example.zoopractice.viewmodel.MainViewModel" />
     </data>
 
@@ -44,6 +44,8 @@
             android:text="@{results.name}"
             android:textColor="@color/colorBlack"
             android:textSize="22sp"
+            android:singleLine="true"
+            android:ellipsize="end"
             app:layout_constraintStart_toEndOf="@+id/animal_img"
             app:layout_constraintTop_toTopOf="@+id/animal_img"
             tools:text="@string/animal_title"/>
@@ -76,7 +78,7 @@
             android:layout_marginBottom="16dp"
             android:background="@null"
             android:src="@mipmap/ic_arrow"
-            android:onClick="@{}"
+            android:onClick="@{viewModel::click}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
