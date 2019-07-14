@@ -4,13 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="com.example.zoopractice.Utils" />
         <variable name="results"
             type="com.example.zoopractice.model.Results"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -22,6 +20,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
             android:scaleType="centerCrop"
+            app:imageUrl="@{results.e_Pic_URL}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -75,14 +74,18 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/animal_memo"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
             android:layout_marginBottom="8dp"
+            android:ellipsize="end"
+            android:singleLine="true"
             android:text="@{results.e_Memo}"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/animal_img"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/animal_info"
-            tools:text="@string/animal_memo"/>
+            tools:text="@string/animal_memo" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

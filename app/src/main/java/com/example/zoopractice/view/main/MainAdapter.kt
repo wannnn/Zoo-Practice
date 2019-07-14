@@ -42,10 +42,10 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.ItemHolder>() {
 
 
     class ItemHolder (private val binding: ItemAnimalBinding) : RecyclerView.ViewHolder(binding.root){
-
         fun bind(data: Results) {
             binding.apply {
-                setVariable(BR.results, data)
+//                setVariable(BR.results, data)
+                results = data
                 executePendingBindings()
             }
         }
