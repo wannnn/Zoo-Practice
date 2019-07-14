@@ -25,7 +25,7 @@ class ZooRepository {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
-                { response -> response.result?.results?.forEach { results -> list.add(results?: Results())
+                { response -> response.result?.results?.forEach { results -> list.add(results)
                     liveData.value = list } },
                 { Log.d("TAG", "error = $it") }
             ).let {

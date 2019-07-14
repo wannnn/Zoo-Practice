@@ -3,9 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-        <variable name="results"
-            type="com.example.zoopractice.model.Results"/>
+    <data
+        android:layout_width="12dp"
+        android:layout_height="6dp">
+
+        <variable
+            name="results"
+            type="com.example.zoopractice.model.Results" />
+
+        <variable
+            name="viewmodel"
+            type="com.example.zoopractice.viewmodel.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,7 +28,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
             android:scaleType="centerCrop"
-            app:imageUrl="@{results.e_Pic_URL}"
+            app:imageUrl="@{results.picUrl}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -33,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="@{results.e_Name}"
+            android:text="@{results.name}"
             android:textColor="@color/colorBlack"
             android:textSize="22sp"
             app:layout_constraintStart_toEndOf="@+id/animal_img"
@@ -50,7 +58,7 @@
             android:layout_marginBottom="8dp"
             android:ellipsize="end"
             android:maxLines="2"
-            android:text="@{results.e_Info}"
+            android:text="@{results.info}"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/animal_memo"
             app:layout_constraintEnd_toStartOf="@+id/img_btn_arrow"
@@ -68,6 +76,7 @@
             android:layout_marginBottom="16dp"
             android:background="@null"
             android:src="@mipmap/ic_arrow"
+            android:onClick="@{}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
@@ -80,7 +89,7 @@
             android:layout_marginBottom="8dp"
             android:ellipsize="end"
             android:singleLine="true"
-            android:text="@{results.e_Memo}"
+            android:text="@{results.memo}"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/animal_img"
             app:layout_constraintEnd_toEndOf="parent"
