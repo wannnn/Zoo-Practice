@@ -4,6 +4,9 @@
     <!-- Toolbar -->
     <dimen name="height_toolbar">55dp</dimen>
 
+    <!-- Navigation Header -->
+    <dimen name="header_height">230dp</dimen>
+
     <!-- ImageView -->
     <dimen name="height_img">150dp</dimen>
     <dimen name="width_img">150dp</dimen>

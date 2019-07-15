@@ -34,7 +34,7 @@ class DetailFragment : Fragment()  {
 
             val title = results?.name
             title?.let {
-                (activity as MainActivity).setUpToolbar(it)
+                (activity as MainActivity).updateToolbar(it)
             }
         }
 
