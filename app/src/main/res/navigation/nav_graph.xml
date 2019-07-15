@@ -24,7 +24,7 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.zoopractice.view.detail.DetailFragment"
-        android:label="DetailFragment"
+        android:label=""
         tools:layout="@layout/frag_detail"/>
     <action android:id="@+id/action_global_detailFragment" app:destination="@id/detailFragment" />
 

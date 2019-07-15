@@ -16,7 +16,7 @@ object RetrofitClient {
 
     private const val BASEURL = "https://data.taipei/opendata/datalist/"
 
-    private var retrofit : Retrofit?=null
+    private var retrofit : Retrofit? = null
 
     private val client = OkHttpClient.Builder()
         .addInterceptor(HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY })
