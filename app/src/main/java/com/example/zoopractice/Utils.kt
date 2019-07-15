@@ -1,6 +1,7 @@
 package com.example.zoopractice
 
 import android.widget.ImageView
+import androidx.appcompat.widget.Toolbar
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.request.RequestOptions
 
@@ -16,3 +17,4 @@ fun loadImage(imageView: ImageView, url: String?) {
         )
         .into(imageView)
 }
+

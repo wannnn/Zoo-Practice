@@ -5,11 +5,9 @@ import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import com.example.zoopractice.R
 import com.example.zoopractice.model.Results
 import com.example.zoopractice.repository.ZooRepository
-import com.example.zoopractice.view.main.MainFragmentDirections
 
 class MainViewModel : ViewModel() {
 

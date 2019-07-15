@@ -9,7 +9,7 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.zoopractice.view.main.MainFragment"
-        android:label="MainFragment"
+        android:label="@string/toolbar_title"
         tools:layout="@layout/frag_main">
         <action
             android:id="@+id/action_mainFragment_to_detailFragment"

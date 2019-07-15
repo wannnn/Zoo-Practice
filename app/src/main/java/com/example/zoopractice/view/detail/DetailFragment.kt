@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.example.zoopractice.R
 import com.example.zoopractice.databinding.FragDetailBinding
+import com.example.zoopractice.view.MainActivity
 import com.example.zoopractice.viewmodel.DetailViewModel
 
 class DetailFragment : Fragment()  {
@@ -30,6 +31,11 @@ class DetailFragment : Fragment()  {
             lifecycleOwner = this@DetailFragment
             viewModel = this@DetailFragment.viewModel
             executePendingBindings()
+
+            val title = results?.name
+            title?.let {
+                (activity as MainActivity).setUpToolbar(it)
+            }
         }
 
         return binding.root

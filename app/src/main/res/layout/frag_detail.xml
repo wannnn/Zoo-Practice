@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="android.text.method.LinkMovementMethod"/>
         <variable
             name="results"
             type="com.example.zoopractice.model.Results" />
