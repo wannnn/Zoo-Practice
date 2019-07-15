@@ -10,9 +10,10 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
 class ZooRepository {
-
+    
     private val list = ArrayList<Results>()
     private val liveData = MutableLiveData<List<Results>>()
+
     private var compositeDisposable: CompositeDisposable = CompositeDisposable()
 
     init {
@@ -25,7 +26,7 @@ class ZooRepository {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
-                { response -> response.result?.results?.forEach { results -> list.add(results)
+                { response -> response.result.results.forEach { results -> list.add(results)
                     liveData.value = list } },
                 { Log.d("TAG", "error = $it") }
             ).let {
@@ -34,6 +35,7 @@ class ZooRepository {
 
         return liveData
     }
+
 }
 
 

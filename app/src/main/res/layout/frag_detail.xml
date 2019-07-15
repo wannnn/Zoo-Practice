@@ -14,80 +14,89 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_animal_detail"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="280dp"
-            android:src="@drawable/cat"
-            android:scaleType="centerCrop"
-            app:imageUrl="@{results.picUrl}"
-            app:layout_constraintDimensionRatio="w,4:3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_height="match_parent">
 
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/animal_detail_info"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="@{results.info}"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img_animal_detail"
-            tools:text="@string/animal_info"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_animal_detail"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:src="@drawable/cat"
+                android:scaleType="centerCrop"
+                app:imageUrl="@{results.picUrl}"
+                app:layout_constraintDimensionRatio="w,4:3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/animal_detail_memo"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@{results.memo}"
-            android:textSize="16sp"
-            android:singleLine="true"
-            android:ellipsize="end"
-            app:layout_constraintEnd_toEndOf="@+id/animal_detail_info"
-            app:layout_constraintStart_toStartOf="@+id/animal_detail_info"
-            app:layout_constraintTop_toBottomOf="@+id/animal_detail_info"
-            tools:text="@string/animal_memo" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/animal_detail_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@{results.info}"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_animal_detail"
+                tools:text="@string/animal_info"/>
 
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/animal_detail_category"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{results.category}"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/animal_detail_memo"
-            app:layout_constraintTop_toBottomOf="@+id/animal_detail_memo"
-            tools:text="@string/animal_category"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/animal_detail_memo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@{results.memo}"
+                android:textSize="16sp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                app:layout_constraintEnd_toEndOf="@+id/animal_detail_info"
+                app:layout_constraintStart_toStartOf="@+id/animal_detail_info"
+                app:layout_constraintTop_toBottomOf="@+id/animal_detail_info"
+                tools:text="@string/animal_memo" />
 
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/open_website"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:autoLink="web"
-            android:ellipsize="end"
-            android:linksClickable="true"
-            android:singleLine="true"
-            android:text="@string/open_website"
-            android:textSize="16sp"
-            android:onClick="@{(v) -> viewModel.openWeb(v, results.url)}"
-            app:layout_constraintBottom_toBottomOf="@+id/animal_detail_category"
-            app:layout_constraintEnd_toEndOf="@+id/animal_detail_info"
-            app:layout_constraintTop_toTopOf="@+id/animal_detail_category"
-            tools:text="@string/open_website" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/animal_detail_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{results.category}"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/animal_detail_memo"
+                app:layout_constraintTop_toBottomOf="@+id/animal_detail_memo"
+                tools:text="@string/animal_category"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/open_website"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:ellipsize="end"
+                android:linksClickable="true"
+                android:singleLine="true"
+                android:text="@string/open_website"
+                android:textSize="16sp"
+                android:onClick="@{(v) -> viewModel.openWeb(v, results.url)}"
+                app:layout_constraintBottom_toBottomOf="@+id/animal_detail_category"
+                app:layout_constraintEnd_toEndOf="@+id/animal_detail_info"
+                app:layout_constraintTop_toTopOf="@+id/animal_detail_category"
+                tools:text="@string/open_website" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
 
 </layout>
