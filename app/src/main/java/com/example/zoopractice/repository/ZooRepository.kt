@@ -10,7 +10,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
 class ZooRepository {
-    
+
     private val list = ArrayList<Results>()
     private val liveData = MutableLiveData<List<Results>>()
 
