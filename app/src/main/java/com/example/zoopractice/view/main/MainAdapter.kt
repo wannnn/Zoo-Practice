@@ -14,6 +14,10 @@ class MainAdapter(private val mainViewModel: MainViewModel) : RecyclerView.Adapt
 
     private var resultsList: List<Results> = ArrayList()
 
+    interface OnResultslickListner {
+        fun onResultsClick(results: Results)
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
         val binding = DataBindingUtil.inflate<ItemAnimalBinding>(LayoutInflater.from(parent.context), R.layout.item_animal, parent, false)
 

@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.example.zoopractice.R
 import com.example.zoopractice.databinding.FragDetailBinding
+import com.example.zoopractice.view.main.MainFragmentArgs
 import com.example.zoopractice.viewmodel.DetailViewModel
 
 class DetailFragment : Fragment()  {
@@ -26,18 +27,13 @@ class DetailFragment : Fragment()  {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding = DataBindingUtil.inflate<FragDetailBinding>(inflater, R.layout.frag_detail, container, false)
 
-//        arguments?.let {
-//            val args = MainFragmentArgs.fromBundle(it)
-//            binding.results = args.data
-//            binding.lifecycleOwner = this
-//        }
-
-        if (arguments != null) {
-            binding.results = arguments!!.getParcelable("data")
+        arguments?.let {
+            val args = MainFragmentArgs.fromBundle(it)
+            binding.results = args.data
             binding.lifecycleOwner = this
             binding.executePendingBindings()
         }
-
+        
         return binding.root
     }
 }
