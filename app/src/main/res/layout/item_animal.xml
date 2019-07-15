@@ -34,18 +34,20 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/animal_title"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:singleLine="true"
             android:text="@{results.name}"
             android:textColor="@color/colorBlack"
             android:textSize="22sp"
-            android:singleLine="true"
-            android:ellipsize="end"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/animal_img"
             app:layout_constraintTop_toTopOf="@+id/animal_img"
-            tools:text="@string/animal_title"/>
+            tools:text="@string/animal_title" />
 
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -84,14 +86,13 @@
             android:id="@+id/animal_memo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
             android:layout_marginBottom="8dp"
             android:ellipsize="end"
             android:singleLine="true"
             android:text="@{results.memo}"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/animal_img"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/animal_title"
             app:layout_constraintStart_toStartOf="@+id/animal_info"
             tools:text="@string/animal_memo" />
 

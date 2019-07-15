@@ -1,10 +1,16 @@
 package com.example.zoopractice.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.example.zoopractice.repository.ZooRepository
+import android.content.Intent
+import android.net.Uri
+import android.view.View
+
 
 class DetailViewModel  : ViewModel() {
 
-    private val repository: ZooRepository = ZooRepository()
+    fun openWeb(view: View, url: String) {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        view.context.startActivity(intent)
+    }
 
 }
