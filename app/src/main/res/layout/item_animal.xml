@@ -21,15 +21,15 @@
             android:id="@+id/animal_img"
             android:layout_width="@dimen/height_img"
             android:layout_height="@dimen/width_img"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
             android:scaleType="centerCrop"
             app:imageUrl="@{results.picUrl}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/cat"/>
+            tools:src="@drawable/cat" />
 
 
         <androidx.appcompat.widget.AppCompatTextView

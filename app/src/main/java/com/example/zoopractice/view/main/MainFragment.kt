@@ -37,6 +37,7 @@ class MainFragment : Fragment() {
                     layoutManager = LinearLayoutManager(context)
                     this@MainFragment.adapter = MainAdapter(viewModel)
                     adapter = this@MainFragment.adapter
+                    addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
                     hasFixedSize()
                 }
 
