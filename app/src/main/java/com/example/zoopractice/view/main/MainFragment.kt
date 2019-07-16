@@ -7,12 +7,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.zoopractice.R
 import com.example.zoopractice.viewmodel.MainViewModel
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
+import com.example.zoopractice.databinding.FragMainBinding
 import com.example.zoopractice.model.Results
 
 
@@ -22,7 +24,6 @@ class MainFragment : Fragment() {
         fun newInstance() = MainFragment()
     }
 
-    private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: MainAdapter
 
     private val viewModel: MainViewModel by lazy {
@@ -30,19 +31,17 @@ class MainFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.frag_main, container, false)
+        val binding = DataBindingUtil.inflate<FragMainBinding>(inflater, R.layout.frag_main, container, false)
 
-        recyclerView = view.findViewById(R.id.recycler_animal)
-                recyclerView.apply {
-                    layoutManager = LinearLayoutManager(context)
-                    this@MainFragment.adapter = MainAdapter(viewModel)
-                    adapter = this@MainFragment.adapter
-                    addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
-                    hasFixedSize()
-                }
+        binding.recyclerAnimal.apply {
+            layoutManager = LinearLayoutManager(context)
+            this@MainFragment.adapter = MainAdapter(viewModel)
+            adapter = this@MainFragment.adapter
+            addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
+            hasFixedSize()
+        }
 
-
-        return view
+        return binding.root
 
     }
 
