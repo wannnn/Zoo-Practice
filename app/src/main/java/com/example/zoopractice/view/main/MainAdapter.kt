@@ -41,6 +41,7 @@ class MainAdapter(private val mainViewModel: MainViewModel) : RecyclerView.Adapt
                 binding.results = data
                 binding.viewModel = it
                 binding.executePendingBindings()
+                binding.invalidateAll()
             }
         }
 

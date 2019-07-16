@@ -8,7 +8,10 @@ import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.Navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
+import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.example.zoopractice.R
 import com.example.zoopractice.databinding.MainActivityBinding
 import kotlinx.android.synthetic.main.main_activity.*
@@ -17,6 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: MainActivityBinding
     private lateinit var navController: NavController
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,14 +28,18 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.main_activity)
         setContentView(binding.root)
 
-        //Toolbar
+        setUpView()
+
+    }
+
+    private fun setUpView() {
         setSupportActionBar(binding.toolbar)
         navController = findNavController(this, R.id.nav_host_fragment)
         setupActionBarWithNavController(this, navController, drawerLayout)
         supportActionBar?.apply {
             setHomeButtonEnabled(true)
             setDisplayHomeAsUpEnabled(true)
-
+            setupWithNavController(binding.navigationView, navController)
         }
 
     }
@@ -53,7 +61,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp() || super.onSupportNavigateUp()
+        return NavigationUI.navigateUp(navController, drawerLayout) || super.onSupportNavigateUp()
 
     }
 

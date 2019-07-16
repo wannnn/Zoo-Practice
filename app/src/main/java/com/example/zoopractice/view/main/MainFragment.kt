@@ -41,6 +41,7 @@ class MainFragment : Fragment() {
                     hasFixedSize()
                 }
 
+
         return view
 
     }

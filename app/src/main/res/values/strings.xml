@@ -11,4 +11,6 @@
 
     <string name="user_name">Claire</string>
     <string name="user_mail">wanruaiai@gmail.com</string>
+    <string name="favorite">Favorite</string>
+    <string name="feedback">Feedback</string>
 </resources>
