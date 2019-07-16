@@ -5,6 +5,10 @@ import androidx.databinding.BindingAdapter
 import com.bumptech.glide.request.RequestOptions
 
 
+class Utils {
+
+}
+
 @BindingAdapter("imageUrl")
 fun loadImage(imageView: ImageView, url: String?) {
     GlideApp.with(imageView.context)

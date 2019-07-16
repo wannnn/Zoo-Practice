@@ -27,7 +27,9 @@ class DetailFragment : Fragment()  {
         val binding = DataBindingUtil.inflate<FragDetailBinding>(inflater, R.layout.frag_detail, container, false)
 
         binding.apply {
-            results = arguments?.getParcelable("data")
+//          方法一：receives arguments from bundle
+//            results = arguments?.getParcelable("data")
+            results = arguments?.let { DetailFragmentArgs.fromBundle(it).data }
             lifecycleOwner = this@DetailFragment
             viewModel = this@DetailFragment.viewModel
             executePendingBindings()
