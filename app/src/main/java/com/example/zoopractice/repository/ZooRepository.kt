@@ -1,6 +1,5 @@
 package com.example.zoopractice.repository
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.example.zoopractice.api.ApiInterface
 import com.example.zoopractice.api.RetrofitClient
@@ -8,6 +7,7 @@ import com.example.zoopractice.model.Results
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
+import timber.log.Timber
 
 class ZooRepository {
 
@@ -28,7 +28,7 @@ class ZooRepository {
             .subscribe(
                 { response -> response.result.results.forEach { results -> list.add(results)
                     liveData.value = list } },
-                { Log.d("TAG", "error = $it") }
+                { Timber.i("error = $it") }
             ).let {
                 compositeDisposable.add(it)
             }

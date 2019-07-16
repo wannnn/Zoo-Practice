@@ -8,7 +8,6 @@ import androidx.navigation.Navigation
 import com.example.zoopractice.R
 import com.example.zoopractice.model.Results
 import com.example.zoopractice.repository.ZooRepository
-import com.example.zoopractice.view.detail.DetailFragmentDirections
 import com.example.zoopractice.view.main.MainFragmentDirections
 
 class MainViewModel : ViewModel() {

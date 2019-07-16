@@ -14,10 +14,6 @@ import com.example.zoopractice.viewmodel.DetailViewModel
 
 class DetailFragment : Fragment()  {
 
-    companion object {
-        fun newInstance() = DetailFragment()
-    }
-
     private val viewModel: DetailViewModel by lazy {
         ViewModelProviders.of(this).get(DetailViewModel::class.java)
     }

@@ -16,13 +16,10 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.example.zoopractice.databinding.FragMainBinding
 import com.example.zoopractice.model.Results
+import timber.log.Timber
 
 
 class MainFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = MainFragment()
-    }
 
     private lateinit var adapter: MainAdapter
 
@@ -58,8 +55,8 @@ class MainFragment : Fragment() {
             Observer<List<Results>> { results ->
                 if (results != null) {
                     adapter.setData(results)
-                    Log.d("TAG", "Results$results")
-                    Log.d("TAG", "Results" + results.size)
+                    Timber.i("results$results")
+                    Timber.i("results size${results.size}")
                 }
             })
     }
