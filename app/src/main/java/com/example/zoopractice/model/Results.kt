@@ -2,6 +2,7 @@ package com.example.zoopractice.model
 
 import android.os.Parcelable
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 import kotlinx.android.parcel.Parcelize
 
@@ -16,7 +17,7 @@ data class Results(
     @Json(name = "E_Pic_URL") val picUrl: String = "",
     @Json(name = "E_URL") val url: String = "",
     @Json(name = "E_no") val no: String = "",
-    @Json(name = "_id") val id: Int = 0
+    @PrimaryKey @Json(name = "_id") val id: Int = 0
 ) : Parcelable {
     var memo = ""
         get() = when(_memo) {

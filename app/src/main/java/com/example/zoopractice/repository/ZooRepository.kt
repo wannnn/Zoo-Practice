@@ -1,8 +1,10 @@
 package com.example.zoopractice.repository
 
 import androidx.lifecycle.MutableLiveData
+import com.example.zoopractice.ZooApplication
 import com.example.zoopractice.database.api.ApiInterface
 import com.example.zoopractice.database.api.RetrofitClient
+import com.example.zoopractice.database.room.ZooDatabase
 import com.example.zoopractice.model.Results
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -13,6 +15,9 @@ class ZooRepository {
 
     private val list = ArrayList<Results>()
     private val liveData = MutableLiveData<List<Results>>()
+
+    private val database = ZooDatabase.getInstance(ZooApplication.applicationContext())
+
 
     private var compositeDisposable: CompositeDisposable = CompositeDisposable()
 
@@ -34,7 +39,13 @@ class ZooRepository {
                 compositeDisposable.add(it)
             }
 
+        refreshZoo()
+
         return liveData
+    }
+
+    private fun refreshZoo() {
+
     }
 
 }
