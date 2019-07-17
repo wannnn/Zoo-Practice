@@ -1,4 +1,4 @@
-package com.example.zoopractice.api
+package com.example.zoopractice.database.api
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -14,7 +14,7 @@ object RetrofitClient {
         .add(KotlinJsonAdapterFactory())
         .build()
 
-    private const val BASEURL = "https://data.taipei/opendata/datalist/"
+    private const val BASE_URL = "https://data.taipei/opendata/datalist/"
 
     private var retrofit : Retrofit? = null
 
@@ -26,7 +26,7 @@ object RetrofitClient {
         get() {
             if (retrofit == null) {
                 retrofit = Retrofit.Builder()
-                    .baseUrl(BASEURL)
+                    .baseUrl(BASE_URL)
                     .addConverterFactory(MoshiConverterFactory.create(moshi))
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .client(client)

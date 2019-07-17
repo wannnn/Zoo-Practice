@@ -1,8 +1,8 @@
 package com.example.zoopractice.repository
 
 import androidx.lifecycle.MutableLiveData
-import com.example.zoopractice.api.ApiInterface
-import com.example.zoopractice.api.RetrofitClient
+import com.example.zoopractice.database.api.ApiInterface
+import com.example.zoopractice.database.api.RetrofitClient
 import com.example.zoopractice.model.Results
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -21,7 +21,8 @@ class ZooRepository {
     }
 
     fun getZooData(): MutableLiveData<List<Results>> {
-        var observable = RetrofitClient.getInstance.create(ApiInterface::class.java).getZoo("resourceAquire","5a0e5fbb-72f8-41c6-908e-2fb25eff9b8a")
+        val observable = RetrofitClient.getInstance.create(
+            ApiInterface::class.java).getZoo("resourceAquire","5a0e5fbb-72f8-41c6-908e-2fb25eff9b8a")
         observable
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

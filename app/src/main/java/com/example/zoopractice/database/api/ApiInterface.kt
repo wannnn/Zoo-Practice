@@ -1,4 +1,4 @@
-package com.example.zoopractice.api
+package com.example.zoopractice.database.api
 
 import com.example.zoopractice.model.ServerResponse
 import io.reactivex.Observable
