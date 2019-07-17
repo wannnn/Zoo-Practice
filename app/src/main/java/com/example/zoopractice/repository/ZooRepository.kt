@@ -1,5 +1,6 @@
 package com.example.zoopractice.repository
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.zoopractice.ZooApplication
 import com.example.zoopractice.database.api.ApiInterface
@@ -25,20 +26,19 @@ class ZooRepository {
         liveData.value = list
     }
 
-    fun getZooData(): MutableLiveData<List<Results>> {
-
+    fun getZooData(): LiveData<List<Results>> {
         val observable = RetrofitClient.getInstance.create(
             ApiInterface::class.java).getZoo("resourceAquire","5a0e5fbb-72f8-41c6-908e-2fb25eff9b8a")
         observable
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
-                { response -> response.result.results.forEach { results -> list.add(results)
+                { response -> response.result.results.forEach { results ->
+                    list.add(results)
                     liveData.value = list } },
                 { Timber.i("error = $it") }
-            ).let {
-                compositeDisposable.add(it)
-            }
+            ).let { compositeDisposable.add(it) }
+
         return liveData
     }
 
