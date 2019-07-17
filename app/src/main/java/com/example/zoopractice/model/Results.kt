@@ -1,9 +1,11 @@
 package com.example.zoopractice.model
 
 import android.os.Parcelable
+import androidx.room.Entity
 import com.squareup.moshi.Json
 import kotlinx.android.parcel.Parcelize
 
+@Entity
 @Parcelize
 data class Results(
     @Json(name = "E_Category") val category: String = "",
