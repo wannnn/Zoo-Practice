@@ -90,7 +90,7 @@
             android:layout_marginBottom="8dp"
             android:ellipsize="end"
             android:singleLine="true"
-            android:text="@{results.memo}"
+            android:text="@{results.e_memo}"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/animal_img"
             app:layout_constraintEnd_toEndOf="@+id/animal_title"

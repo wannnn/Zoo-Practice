@@ -2,7 +2,7 @@ package com.example.zoopractice.viewmodel
 
 import android.os.Bundle
 import android.view.View
-import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import com.example.zoopractice.R
@@ -14,7 +14,7 @@ class MainViewModel : ViewModel() {
 
     private val repository: ZooRepository = ZooRepository()
 
-    val items: MutableLiveData<List<Results>> = repository.getZooData()
+    val items: LiveData<List<Results>> = repository.getZooData()
 
     fun click(view: View, results: Results) {
 //      方法一：use bundle
