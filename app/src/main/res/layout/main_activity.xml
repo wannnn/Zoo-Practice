@@ -23,7 +23,6 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/height_toolbar"
-                app:navigationIcon="@mipmap/ic_menu"
                 android:elevation="10dp"
                 android:background="@color/colorLightGray"
                 app:title="@string/toolbar_title"

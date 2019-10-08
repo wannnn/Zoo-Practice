@@ -4,19 +4,14 @@ import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.request.RequestOptions
 
-
-class Utils {
-
-}
-
 @BindingAdapter("imageUrl")
 fun loadImage(imageView: ImageView, url: String?) {
     GlideApp.with(imageView.context)
         .load(url)
         .apply(
             RequestOptions()
-                .placeholder(R.drawable.cat)
-                .error(R.drawable.cat)
+                .placeholder(R.drawable.background)
+                .error(R.drawable.background)
         )
         .into(imageView)
 }

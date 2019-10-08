@@ -4,13 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable
-            name="results"
-            type="com.example.zoopractice.model.Results" />
-
-        <variable
-            name="viewModel"
-            type="com.example.zoopractice.viewmodel.MainViewModel" />
+        <variable name="results" type="com.example.zoopractice.model.Results" />
+        <variable name="viewModel" type="com.example.zoopractice.viewmodel.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -29,8 +24,7 @@
             app:imageUrl="@{results.picUrl}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/cat" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <androidx.appcompat.widget.AppCompatTextView

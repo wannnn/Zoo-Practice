@@ -18,6 +18,9 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_mainFragment_to_barcodeScanningFragment"
+            app:destination="@id/barcodeScanningFragment" />
 
     </fragment>
 
@@ -34,6 +37,11 @@
             android:defaultValue="@null"
             app:nullable="true"/>
     </fragment>
+    <fragment
+        android:id="@+id/barcodeScanningFragment"
+        android:name="com.example.zoopractice.BarcodeScanningFragment"
+        android:label="BarcodeScanningFragment"
+        tools:layout="@layout/frag_barcodescanning"/>
 
 
 </navigation>

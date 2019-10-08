@@ -19,6 +19,7 @@ abstract class ZooDatabase  : RoomDatabase() {
                 INSTANCE = Room.databaseBuilder(
                     context, ZooDatabase::class.java, "zooDB")
                     .allowMainThreadQueries()
+                    .fallbackToDestructiveMigration()
                     .build()
             }
             return INSTANCE as ZooDatabase

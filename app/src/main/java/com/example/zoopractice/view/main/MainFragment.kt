@@ -49,8 +49,7 @@ class MainFragment : Fragment() {
 
     private fun observeViewModel(viewModel: MainViewModel) {
         // Update the list when the data changes
-        viewModel.items.observe(this,
-            Observer<List<Results>> { results ->
+        viewModel.items.observe(this, Observer<List<Results>> { results ->
                 if (results != null) {
                     adapter.setData(results)
                     Timber.i("results$results")

@@ -26,7 +26,6 @@
                 android:id="@+id/img_animal_detail"
                 android:layout_width="match_parent"
                 android:layout_height="280dp"
-                android:src="@drawable/cat"
                 android:scaleType="centerCrop"
                 app:imageUrl="@{results.picUrl}"
                 app:layout_constraintDimensionRatio="w,4:3"
