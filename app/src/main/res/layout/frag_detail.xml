@@ -68,10 +68,8 @@
                 android:id="@+id/animal_detail_category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
                 android:text="@{results.category}"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/animal_detail_memo"
                 app:layout_constraintTop_toBottomOf="@+id/animal_detail_memo"
                 tools:text="@string/animal_category" />
@@ -93,6 +91,16 @@
                 app:layout_constraintEnd_toEndOf="@+id/animal_detail_info"
                 app:layout_constraintTop_toTopOf="@+id/animal_detail_category"
                 tools:text="@string/open_website" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/from_where"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="from where"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/animal_detail_category"
+                app:layout_constraintTop_toBottomOf="@+id/animal_detail_category" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

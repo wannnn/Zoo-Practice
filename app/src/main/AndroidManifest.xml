@@ -20,6 +20,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <!-- 為 Activity 設置 <nav-graph/> 標籤 -->
+            <nav-graph android:value="@navigation/nav_graph" />
         </activity>
     </application>
 

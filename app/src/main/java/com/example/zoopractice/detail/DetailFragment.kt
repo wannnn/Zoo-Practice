@@ -22,9 +22,12 @@ class DetailFragment : Fragment()  {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding = DataBindingUtil.inflate<FragDetailBinding>(inflater, R.layout.frag_detail, container, false)
 
+        val bundle = arguments
+
         binding.apply {
 //          方法一：receives arguments from bundle
 //            results = arguments?.getParcelable("data")
+
             results = arguments?.let { DetailFragmentArgs.fromBundle(it).data }
             lifecycleOwner = this@DetailFragment
             viewModel = this@DetailFragment.viewModel
@@ -33,6 +36,12 @@ class DetailFragment : Fragment()  {
             val title = results?.name
             title?.let {
                 (activity as MainActivity).updateToolbar(it)
+            }
+
+            // test 指令 -> adb shell am start -a android.intent.action.VIEW -d "http://www.zoo.gov.tw/introduce/gq.aspx?tid=13"
+            if (bundle != null) {
+                val params = bundle.getString("params")
+                binding.fromWhere.text = params
             }
         }
 

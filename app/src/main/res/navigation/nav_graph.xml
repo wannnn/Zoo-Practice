@@ -18,9 +18,6 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
-        <action
-            android:id="@+id/action_mainFragment_to_barcodeScanningFragment"
-            app:destination="@id/barcodeScanningFragment" />
 
     </fragment>
 
@@ -36,12 +33,18 @@
             app:argType="com.example.zoopractice.model.Results"
             android:defaultValue="@null"
             app:nullable="true"/>
+
+        <!-- 為 destination 添加 <deepLink/> 標籤 -->
+        <deepLink app:uri="www.zoo.gov.tw/introduce/gq.aspx?tid={params}" />
     </fragment>
+
     <fragment
-        android:id="@+id/barcodeScanningFragment"
-        android:name="com.example.zoopractice.BarcodeScanningFragment"
-        android:label="BarcodeScanningFragment"
-        tools:layout="@layout/frag_barcodescanning"/>
+        android:id="@+id/feedBackFragment"
+        android:name="com.example.zoopractice.feedback.FeedBackFragment"
+        android:label="FeedBack"
+        tools:layout="@layout/frag_feedback"/>
+
+    <action android:id="@+id/action_global_feedBackFragment" app:destination="@id/feedBackFragment"/>
 
 
 </navigation>
