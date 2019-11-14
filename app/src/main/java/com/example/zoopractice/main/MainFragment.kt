@@ -1,4 +1,4 @@
-package com.example.zoopractice.view.main
+package com.example.zoopractice.main
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.zoopractice.R
-import com.example.zoopractice.viewmodel.MainViewModel
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.zoopractice.databinding.FragMainBinding

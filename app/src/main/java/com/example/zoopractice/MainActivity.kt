@@ -1,4 +1,4 @@
-package com.example.zoopractice.view
+package com.example.zoopractice
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,15 +8,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
-import androidx.navigation.NavDirections
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import androidx.navigation.ui.NavigationUI.setupWithNavController
-import com.example.zoopractice.NavGraphDirections
-import com.example.zoopractice.R
 import com.example.zoopractice.databinding.MainActivityBinding
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.main_activity.*
@@ -80,7 +77,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         return NavigationUI.navigateUp(navController, drawerLayout) || super.onSupportNavigateUp()
-
     }
 
     override fun onBackPressed() {

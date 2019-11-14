@@ -10,7 +10,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.zoopractice.viewmodel.DetailViewModel" />
+            type="com.example.zoopractice.detail.DetailViewModel" />
     </data>
 
     <androidx.core.widget.NestedScrollView

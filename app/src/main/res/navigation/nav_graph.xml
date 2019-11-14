@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.zoopractice.view.main.MainFragment"
+        android:name="com.example.zoopractice.main.MainFragment"
         android:label="@string/toolbar_title"
         tools:layout="@layout/frag_main">
         <action
@@ -19,11 +19,14 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
 
+        <!-- 為 destination 添加 <deepLink/> 標籤 -->
+        <deepLink app:uri="www.MyWebsite/{params}" />
+
     </fragment>
 
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.example.zoopractice.view.detail.DetailFragment"
+        android:name="com.example.zoopractice.detail.DetailFragment"
         android:label=""
         tools:layout="@layout/frag_detail">
         <action android:id="@+id/action_global_detailFragment"
@@ -33,9 +36,6 @@
             app:argType="com.example.zoopractice.model.Results"
             android:defaultValue="@null"
             app:nullable="true"/>
-
-        <!-- 為 destination 添加 <deepLink/> 標籤 -->
-        <deepLink app:uri="www.zoo.gov.tw/introduce/gq.aspx?tid={params}" />
     </fragment>
 
     <fragment

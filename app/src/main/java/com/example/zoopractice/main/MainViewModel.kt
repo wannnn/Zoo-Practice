@@ -1,4 +1,4 @@
-package com.example.zoopractice.viewmodel
+package com.example.zoopractice.main
 
 import android.os.Bundle
 import android.view.View
@@ -8,7 +8,7 @@ import androidx.navigation.Navigation
 import com.example.zoopractice.R
 import com.example.zoopractice.model.Results
 import com.example.zoopractice.repository.ZooRepository
-import com.example.zoopractice.view.main.MainFragmentDirections
+import com.example.zoopractice.main.MainFragmentDirections
 
 class MainViewModel : ViewModel() {
 

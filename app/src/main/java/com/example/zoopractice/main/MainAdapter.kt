@@ -1,4 +1,4 @@
-package com.example.zoopractice.view.main
+package com.example.zoopractice.main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.zoopractice.R
 import com.example.zoopractice.databinding.ItemAnimalBinding
 import com.example.zoopractice.model.Results
-import com.example.zoopractice.viewmodel.MainViewModel
 
 
 class MainAdapter(private val mainViewModel: MainViewModel) : RecyclerView.Adapter<MainAdapter.ItemHolder>() {

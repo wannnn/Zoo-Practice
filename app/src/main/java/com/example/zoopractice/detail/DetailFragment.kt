@@ -1,4 +1,4 @@
-package com.example.zoopractice.view.detail
+package com.example.zoopractice.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,8 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.example.zoopractice.R
 import com.example.zoopractice.databinding.FragDetailBinding
-import com.example.zoopractice.view.MainActivity
-import com.example.zoopractice.viewmodel.DetailViewModel
+import com.example.zoopractice.MainActivity
+import com.example.zoopractice.detail.DetailFragmentArgs
 
 class DetailFragment : Fragment()  {
 
@@ -38,7 +38,7 @@ class DetailFragment : Fragment()  {
                 (activity as MainActivity).updateToolbar(it)
             }
 
-            // test 指令 -> adb shell am start -a android.intent.action.VIEW -d "http://www.zoo.gov.tw/introduce/gq.aspx?tid=13"
+            // test 指令 -> adb shell am start -a android.intent.action.VIEW -d "http://www.MyWebsite/Claire"
             if (bundle != null) {
                 val params = bundle.getString("params")
                 binding.fromWhere.text = params

@@ -1,4 +1,4 @@
-package com.example.zoopractice.viewmodel
+package com.example.zoopractice.detail
 
 import androidx.lifecycle.ViewModel
 import android.content.Intent
