@@ -101,14 +101,26 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
+                android:onClick="@{() -> fragment.send()}"
                 android:text="Send Notification"
                 android:textAllCaps="false"
-                android:onClick="@{() -> fragment.send()}"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/animal_detail_info"
                 app:layout_constraintStart_toStartOf="@+id/animal_detail_info"
                 app:layout_constraintTop_toBottomOf="@+id/animal_detail_category" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/go_next_page"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:onClick="@{() -> fragment.goNextPage()}"
+                android:text="Go Next Page"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/btn_send_notification"
+                app:layout_constraintStart_toStartOf="@+id/btn_send_notification"
+                app:layout_constraintTop_toBottomOf="@+id/btn_send_notification" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

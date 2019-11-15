@@ -24,13 +24,13 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.zoopractice.profile.ProfileFragment"
-        android:label="ProfileFragment"
+        android:label="Profile"
         tools:layout="@layout/frag_profile"/>
 
     <fragment
         android:id="@+id/trafficFragment"
         android:name="com.example.zoopractice.traffic.TrafficFragment"
-        android:label="TrafficFragment"
+        android:label="Traffic"
         tools:layout="@layout/frag_traffic"/>
 
     <fragment
@@ -43,6 +43,10 @@
             app:argType="com.example.zoopractice.model.Results"
             android:defaultValue="@null"
             app:nullable="true"/>
+        <action
+            android:id="@+id/action_detailFragment_to_helloFragment"
+            app:destination="@id/helloFragment"
+            app:popUpTo="@id/mainFragment"/>
     </fragment>
 
     <fragment
@@ -57,10 +61,15 @@
             app:uri="www.ZooWebsite/{params}" />
     </fragment>
 
-    <action android:id="@+id/action_global_mainFragment" app:destination="@id/mainFragment" app:popUpTo="@+id/nav_graph" app:popUpToInclusive="true" />
+    <fragment
+        android:id="@+id/helloFragment"
+        android:name="com.example.zoopractice.detail.HelloFragment"
+        android:label="HelloFragment"
+        tools:layout="@layout/frag_hello"/>
+
+    <action android:id="@+id/action_global_mainFragment" app:destination="@id/mainFragment" app:popUpTo="@+id/nav_graph" app:popUpToInclusive="true"/>
     <action android:id="@+id/action_global_trafficFragment" app:destination="@id/trafficFragment" app:popUpTo="@+id/nav_graph" app:popUpToInclusive="true" />
     <action android:id="@+id/action_global_profileFragment" app:destination="@id/profileFragment" app:popUpTo="@+id/nav_graph" app:popUpToInclusive="true" />
     <action android:id="@+id/action_global_feedBackFragment" app:destination="@id/feedBackFragment"/>
-
 
 </navigation>

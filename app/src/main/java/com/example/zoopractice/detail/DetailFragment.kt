@@ -15,9 +15,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.example.zoopractice.MainActivity
 import com.example.zoopractice.R
 import com.example.zoopractice.databinding.FragDetailBinding
+import com.example.zoopractice.main.MainFragmentDirections
 
 class DetailFragment : Fragment()  {
 
@@ -91,5 +93,9 @@ class DetailFragment : Fragment()  {
         }
 
         return null
+    }
+
+    fun goNextPage() {
+        findNavController().navigate(DetailFragmentDirections.actionDetailFragmentToHelloFragment())
     }
 }
