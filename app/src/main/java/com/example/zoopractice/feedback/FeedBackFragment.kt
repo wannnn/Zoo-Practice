@@ -20,7 +20,7 @@ class FeedBackFragment : Fragment() {
         if (bundle != null) {
             val params = bundle.getString("params")
             if (!TextUtils.isEmpty(params)) {
-                binding.tvSendFeedback.text = "Send us feedBack from $params"
+                binding.tvSendFeedback.text = getString(R.string.title_feedback, params)
             }
         }
 

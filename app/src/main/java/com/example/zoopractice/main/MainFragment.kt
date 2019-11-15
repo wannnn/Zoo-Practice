@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.zoopractice.R
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.zoopractice.databinding.FragMainBinding
 import com.example.zoopractice.model.Results
@@ -29,7 +30,7 @@ class MainFragment : Fragment() {
 
         binding.recyclerAnimal.apply {
             layoutManager = LinearLayoutManager(context)
-            this@MainFragment.adapter = MainAdapter(viewModel)
+            this@MainFragment.adapter = MainAdapter(viewModel, this@MainFragment)
             adapter = this@MainFragment.adapter
             addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
             hasFixedSize()
@@ -55,6 +56,16 @@ class MainFragment : Fragment() {
                     Timber.i("results size${results.size}")
                 }
             })
+    }
+
+    fun click(results: Results) {
+//      方法一：use bundle
+//        val bundle = Bundle()
+//        bundle.putParcelable("data", results)
+//        findNavController().navigate(R.id.action_mainFragment_to_detailFragment, bundle)
+
+//      方法二：use argument
+        findNavController().navigate(MainFragmentDirections.actionMainFragmentToDetailFragment(results))
     }
 
 }

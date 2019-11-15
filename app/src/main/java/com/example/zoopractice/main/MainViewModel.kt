@@ -16,14 +16,14 @@ class MainViewModel : ViewModel() {
 
     val items: LiveData<List<Results>> = repository.getZooData()
 
-    fun click(view: View, results: Results) {
-//      方法一：use bundle
-//        val bundle = Bundle()
-//        bundle.putParcelable("data", results)
-//        Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_detailFragment, bundle)
-
-//      方法二：use argument
-        Navigation.findNavController(view).navigate(MainFragmentDirections.actionMainFragmentToDetailFragment(results))
-    }
+//    fun click(results: Results) {
+////      方法一：use bundle
+////        val bundle = Bundle()
+////        bundle.putParcelable("data", results)
+////        Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_detailFragment, bundle)
+//
+////      方法二：use argument
+//        Navigation.findNavController(view).navigate(MainFragmentDirections.actionMainFragmentToDetailFragment(results))
+//    }
 
 }

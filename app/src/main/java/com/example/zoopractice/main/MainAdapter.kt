@@ -9,7 +9,7 @@ import com.example.zoopractice.databinding.ItemAnimalBinding
 import com.example.zoopractice.model.Results
 
 
-class MainAdapter(private val mainViewModel: MainViewModel) : RecyclerView.Adapter<MainAdapter.ItemHolder>() {
+class MainAdapter(private val mainViewModel: MainViewModel, private val fragment: MainFragment) : RecyclerView.Adapter<MainAdapter.ItemHolder>() {
 
     private var resultsList: List<Results> = ArrayList()
 
@@ -24,7 +24,7 @@ class MainAdapter(private val mainViewModel: MainViewModel) : RecyclerView.Adapt
 
 
     override fun onBindViewHolder(holder: ItemHolder, position: Int) {
-        holder.bind(resultsList[position], mainViewModel)
+        holder.bind(resultsList[position], mainViewModel, fragment)
     }
 
     fun setData(list: List<Results>) {
@@ -35,12 +35,13 @@ class MainAdapter(private val mainViewModel: MainViewModel) : RecyclerView.Adapt
 
     class ItemHolder (private val binding: ItemAnimalBinding) : RecyclerView.ViewHolder(binding.root){
 
-        fun bind(data: Results, viewModel: MainViewModel) {
-            viewModel.let {
-                binding.results = data
-                binding.viewModel = it
-                binding.executePendingBindings()
-                binding.invalidateAll()
+        fun bind(data: Results, viewModel: MainViewModel, fragment: MainFragment) {
+            binding.apply {
+                this.fragment = fragment
+                results = data
+                this.viewModel = viewModel
+                executePendingBindings()
+                invalidateAll()
             }
         }
 
