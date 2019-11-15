@@ -19,9 +19,6 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
 
-        <!-- 為 destination 添加 <deepLink/> 標籤 -->
-        <deepLink app:uri="www.MyWebsite/{params}" />
-
     </fragment>
 
     <fragment
@@ -42,7 +39,11 @@
         android:id="@+id/feedBackFragment"
         android:name="com.example.zoopractice.feedback.FeedBackFragment"
         android:label="FeedBack"
-        tools:layout="@layout/frag_feedback"/>
+        tools:layout="@layout/frag_feedback">
+
+        <!-- 為 destination 添加 <deepLink/> 標籤 -->
+        <deepLink app:uri="www.ZooWebsite/{params}" />
+    </fragment>
 
     <action android:id="@+id/action_global_feedBackFragment" app:destination="@id/feedBackFragment"/>
 
