@@ -2,6 +2,7 @@ package com.example.zoopractice
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
@@ -17,6 +18,8 @@ import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.zoopractice.databinding.MainActivityBinding
+import com.example.zoopractice.detail.DetailFragment
+import com.example.zoopractice.feedback.FeedBackFragment
 import com.example.zoopractice.main.MainFragment
 import com.example.zoopractice.profile.ProfileFragment
 import com.example.zoopractice.traffic.TrafficFragment
@@ -74,7 +77,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setUpView() {
-        binding.bottomNavView.selectedItemId = R.id.navigation_fav
 
         appBarConfig = AppBarConfiguration(
             setOf(R.id.trafficFragment, R.id.mainFragment, R.id.profileFragment), drawerLayout
@@ -90,6 +92,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         // drawer
+        binding.drawerNavView.setNavigationItemSelectedListener(onDrawerNavItemSelectedListener)
+
         navController.addOnDestinationChangedListener { nc: NavController, nd: NavDestination, _: Bundle? ->
             if (nd.id == nc.graph.startDestination) {
                 drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
@@ -98,21 +102,22 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        binding.drawerNavView.setNavigationItemSelectedListener(onDrawerNavItemSelectedListener)
-
         // bottom navigation
         binding.bottomNavView.setOnNavigationItemSelectedListener(onBottomNavItemSelectedListener)
+        binding.bottomNavView.selectedItemId = R.id.navigation_fav
+
+        if (getCurrentFrag() is DetailFragment || getCurrentFrag() is FeedBackFragment) {
+            binding.bottomNavView.visibility = View.GONE
+        } else {
+            binding.bottomNavView.visibility = View.VISIBLE
+        }
     }
 
-    private fun getCurrentFrag(): Fragment? = (supportFragmentManager.primaryNavigationFragment as NavHostFragment).childFragmentManager.primaryNavigationFragment
+    private fun getCurrentFrag(): Fragment? = supportFragmentManager.primaryNavigationFragment?.childFragmentManager?.primaryNavigationFragment
 
     fun updateToolbar(title: String) {
         binding.toolbar.title = title
     }
-
-//    override fun onSupportNavigateUp(): Boolean {
-//        return NavigationUI.navigateUp(navController, drawerLayout) || super.onSupportNavigateUp()
-//    }
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfig) || super.onSupportNavigateUp()

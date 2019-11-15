@@ -24,13 +24,13 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.zoopractice.profile.ProfileFragment"
-        android:label="ProfileFragment"
+        android:label="Profile"
         tools:layout="@layout/frag_profile"/>
 
     <fragment
         android:id="@+id/trafficFragment"
         android:name="com.example.zoopractice.traffic.TrafficFragment"
-        android:label="TrafficFragment"
+        android:label="Traffic"
         tools:layout="@layout/frag_traffic"/>
 
     <fragment
