@@ -22,6 +22,18 @@
     </fragment>
 
     <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.zoopractice.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/frag_profile"/>
+
+    <fragment
+        android:id="@+id/trafficFragment"
+        android:name="com.example.zoopractice.traffic.TrafficFragment"
+        android:label="TrafficFragment"
+        tools:layout="@layout/frag_traffic"/>
+
+    <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.zoopractice.detail.DetailFragment"
         android:label=""
@@ -40,9 +52,14 @@
         tools:layout="@layout/frag_feedback">
 
         <!-- 為 destination 添加 <deepLink/> 標籤 -->
-        <deepLink app:uri="www.ZooWebsite/{params}" />
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="www.ZooWebsite/{params}" />
     </fragment>
 
+    <action android:id="@+id/action_global_mainFragment" app:destination="@id/mainFragment" app:popUpTo="@+id/nav_graph" app:popUpToInclusive="true" />
+    <action android:id="@+id/action_global_trafficFragment" app:destination="@id/trafficFragment" app:popUpTo="@+id/nav_graph" app:popUpToInclusive="true" />
+    <action android:id="@+id/action_global_profileFragment" app:destination="@id/profileFragment" app:popUpTo="@+id/nav_graph" app:popUpToInclusive="true" />
     <action android:id="@+id/action_global_feedBackFragment" app:destination="@id/feedBackFragment"/>
 
 

@@ -21,7 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-            <!-- 為 Activity 設置 <nav-graph/> 標籤 -->
+            <!-- 為 Activity 設置 <nav-graph/> 標籤，這樣 user 在 Web 中訪問到你的網站時，你的 app 便能監聽到 -->
             <nav-graph android:value="@navigation/nav_graph" />
         </activity>
     </application>
