@@ -70,7 +70,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
     fun updateToolbar(title: String) {
         binding.toolbar.title = title
     }
