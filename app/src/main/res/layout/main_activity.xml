@@ -55,6 +55,7 @@
                 android:background="@color/colorWhite"
                 android:elevation="10dp"
                 app:itemIconSize="32dp"
+                android:visibility="@{}"
                 app:labelVisibilityMode="unlabeled"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
