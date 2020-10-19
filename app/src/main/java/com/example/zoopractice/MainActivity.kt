@@ -78,6 +78,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUpView() {
 
+        // Navigation 的 ActionBar 預設進入 Fragment 時上方的 menu 紐會變成一個返回鍵，
+        // 要想禁用這個效果可以在他的 Builder 裡放入要保持原樣的 Fragment xml
         appBarConfig = AppBarConfiguration(
             setOf(R.id.trafficFragment, R.id.mainFragment, R.id.profileFragment), drawerLayout
         )
@@ -119,6 +121,7 @@ class MainActivity : AppCompatActivity() {
         binding.toolbar.title = title
     }
 
+    // 返回鍵觸發時的行為可以依據 AppBarConfiguration 的設定來變化
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfig) || super.onSupportNavigateUp()
     }

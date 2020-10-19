@@ -10,10 +10,14 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.zoopractice.R
 import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.zoopractice.databinding.FragMainBinding
 import com.example.zoopractice.model.Results
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.supervisorScope
 import timber.log.Timber
 
 
@@ -49,13 +53,30 @@ class MainFragment : Fragment() {
 
     private fun observeViewModel(viewModel: MainViewModel) {
         // Update the list when the data changes
-        viewModel.items.observe(this, Observer<List<Results>> { results ->
+        viewModel.items.observe(viewLifecycleOwner, Observer { results ->
                 if (results != null) {
                     adapter.setData(results)
                     Timber.i("results$results")
                     Timber.i("results size${results.size}")
                 }
             })
+
+
+        val exceptionHandler = CoroutineExceptionHandler { _, e ->
+            println("handler: ${e.message}")
+        }
+
+
+        lifecycleScope.launch(exceptionHandler) {
+            supervisorScope {
+                launch {
+
+                }
+                launch {
+
+                }
+            }
+        }
     }
 
     fun click(results: Results) {

@@ -67,7 +67,7 @@
         android:label="HelloFragment"
         tools:layout="@layout/frag_hello"/>
 
-    <action android:id="@+id/action_global_mainFragment" app:destination="@id/mainFragment" app:popUpTo="@+id/nav_graph" app:popUpToInclusive="true"/>
+    <action android:id="@+id/action_global_mainFragment" app:destination="@id/mainFragment" />
     <action android:id="@+id/action_global_trafficFragment" app:destination="@id/trafficFragment" app:popUpTo="@+id/nav_graph" app:popUpToInclusive="true" />
     <action android:id="@+id/action_global_profileFragment" app:destination="@id/profileFragment" app:popUpTo="@+id/nav_graph" app:popUpToInclusive="true" />
     <action android:id="@+id/action_global_feedBackFragment" app:destination="@id/feedBackFragment"/>
